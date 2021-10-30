@@ -12,10 +12,10 @@ class CreateUserView(generics.CreateAPIView):
 
 class BlogReadOnlyView(viewsets.ReadOnlyModelViewSet):
     queryset = Blog.objects.all()
-    serializer_class = serializers.TagSerializer
+    serializer_class = serializers.BlogSerializer
     permission_classes = (AllowAny,)
 
 
 class DeleteBlogView(generics.DestroyAPIView):
     queryset = Blog.objects.all()
-    serializer_class = serializers.BlogSerializer()
+    serializer_class = serializers.BlogSerializer
